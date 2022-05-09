@@ -20,6 +20,7 @@ class ListView(TemplateView):
         keyword    = Q()
         order      = 'newadddate'
         page       = 1
+        # GETパラメータ取得
         if "category" in self.request.GET:
             param_category=self.request.GET.get('category')
             if param_category != "" :

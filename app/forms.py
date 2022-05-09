@@ -28,7 +28,7 @@ class SearchForm(forms.Form):
         widget=forms.Select(attrs={"class":"form-select"})
     )
 
-#　問い合わせフォーム
+#　お問い合わせフォーム
 class ContactForm(forms.Form):
     name = forms.CharField(
         label='',
@@ -59,7 +59,7 @@ class ContactForm(forms.Form):
         name = self.cleaned_data['name']
         email = self.cleaned_data['email']
         from_email = '{name} <{email}>'.format(name=name, email=email)
-        recipient_list = [settings.EMAIL_HOST_USER]  # 受信者リスト
+        recipient_list = [settings.EMAIL_HOST_USER]
         try:
             send_mail(subject, message, from_email, recipient_list)
         except BadHeaderError:
