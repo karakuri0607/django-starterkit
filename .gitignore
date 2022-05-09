@@ -3,5 +3,5 @@
 __pycache__/
 .DS_Store
 db.sqlite3
-media/images/
 app/migrations
+media/images/*
