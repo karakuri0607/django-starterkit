@@ -1,0 +1,5 @@
+*.log
+*.pyc
+__pycache__/
+/media
+.DS_Store

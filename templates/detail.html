@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block head %}
+<title>{{ detail.title }}</title>
+{% endblock %}
+
+{% block content %}
+<div class="content">
+    <div class="container my-5">
+        <div class="row">
+            <div class="col-md-8">
+                <!-- カテゴリ、タグ -->
+                <div class="d-flex justify-content-start align-items-center">
+                    <div class="py-2">
+                        <a href="{% url 'app:list' %}?category={{detail.category.id}}"
+                            class="box bg-category">{{ detail.category }}</a>
+                        {% for tag in detail.tag.all %}
+                        <a href="{% url 'app:list' %}?tag={{tag.id}}"
+                            class="box bg-tag">{{ tag.name }}</a>
+                        {% endfor %}
+                    </div>
+                </div>
+                <!-- 作成日時、更新日時 -->
+                <div class="d-flex justify-content-end align-items-center">
+                    {% if detail.newadddate|date:"Ymd" != detail.updatedate|date:"Ymd" %}
+                    <div class="px-2">
+                        <img src="{% static 'images/update_watch.svg' %}" alt="">
+                        <label>{{ detail.updatedate | date:"Y/m/d"}}</label>
+                    </div>
+                    {% endif %}
+                    <div class="px-2">
+                        <img src="{% static 'images/upload_watch.svg' %}" alt="">
+                        <label>{{ detail.newadddate | date:"Y/m/d"}}</label>
+                    </div>
+                </div>
+                <!-- タイトル -->
+                <h1>{{ detail.title }}</h1>
+                <!-- 内容 -->
+                <div class="img-link">
+                    <img src="/media/{{ detail.image }}" class="img-thumbnail w-100" alt="">
+                    <div id='toc-range'>
+                        <p>{{ detail.content | safe }}</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
