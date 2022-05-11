@@ -5,6 +5,7 @@
 ```bash
 python -m virtualenv venv
 ```
+※作成済みの場合は不要
 
 
 * 仮想環境の起動
@@ -17,6 +18,7 @@ source ./venv/bin/activate
 下記リンクよりダウンロードしてください。
 
   https://pythonlinks.python.jp/
+※インストール済みの場合は不要
 
 
 
@@ -24,6 +26,7 @@ source ./venv/bin/activate
 ```bash
 pip install django
 ```
+※インストール済みの場合は不要
 
 
 * ライブラリのインストール
