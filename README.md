@@ -9,7 +9,7 @@
 
 
 * 仮想環境の作成
-```python
+```Python
 python -m virtualenv venv
 ```
 ※作成済みの場合は不要
@@ -35,19 +35,19 @@ pip install 〇〇
 
 
 * DB生成
-```python
+```Python
 python manage.py makemigrations
 ```
-```python
+```Python
 python manage.py makemigrations app
 ```
-```python
+```Python
 python manage.py migrate
 ```
 
 
 * プログラム実行
-```python
+```Python
 python manage.py runserver
 ```
 
